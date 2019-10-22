@@ -16,14 +16,6 @@
             "project": "projects/my-awesome-lib-with-jest/ng-package.json"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/my-awesome-lib-with-jest/src/test.ts",
-            "tsConfig": "projects/my-awesome-lib-with-jest/tsconfig.spec.json",
-            "karmaConfig": "projects/my-awesome-lib-with-jest/karma.conf.js"
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -110,23 +102,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "my-awesome-lib-with-jest-showcase:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/my-awesome-lib-with-jest-showcase/src/test.ts",
-            "polyfills": "projects/my-awesome-lib-with-jest-showcase/src/polyfills.ts",
-            "tsConfig": "projects/my-awesome-lib-with-jest-showcase/tsconfig.spec.json",
-            "karmaConfig": "projects/my-awesome-lib-with-jest-showcase/karma.conf.js",
-            "assets": [
-              "projects/my-awesome-lib-with-jest-showcase/src/favicon.ico",
-              "projects/my-awesome-lib-with-jest-showcase/src/assets"
-            ],
-            "styles": [
-              "projects/my-awesome-lib-with-jest-showcase/src/styles.css"
-            ],
-            "scripts": []
           }
         },
         "lint": {
