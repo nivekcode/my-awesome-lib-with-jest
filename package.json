@@ -5,7 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test:jest": "jest",
+    "test": "npm run test:lib && npm run test:showcase",
+    "test:lib": "ng test my-awesome-lib-with-jest",
+    "test:showcase": "ng test my-awesome-lib-with-jest-showcase",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -19,7 +22,11 @@
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",
+    "@types/jest": "^24.0.19",
+    "jest": "^24.9.0",
+    "jest-preset-angular": "^8.0.0",
     "rxjs": "~6.4.0",
+    "ts-jest": "^24.1.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
