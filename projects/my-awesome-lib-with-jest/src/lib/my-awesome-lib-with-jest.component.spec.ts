@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MyAwesomeLibWithJestComponent } from './my-awesome-lib-with-jest.component';
+import {MyAwesomeLibWithJestComponent} from './my-awesome-lib-with-jest.component';
+import {MyAwesomeLibWithJestService} from './my-awesome-lib-with-jest.service';
 
 describe('MyAwesomeLibWithJestComponent', () => {
   let component: MyAwesomeLibWithJestComponent;
@@ -8,9 +9,16 @@ describe('MyAwesomeLibWithJestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyAwesomeLibWithJestComponent ]
+      declarations: [MyAwesomeLibWithJestComponent],
+      providers: [
+        {
+          provide: MyAwesomeLibWithJestService, useValue: {
+            bar: 'foo'
+          }
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +29,9 @@ describe('MyAwesomeLibWithJestComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should assign the bar propert to foo', () => {
+    expect(component.foo).toBe('foo');
   });
 });
