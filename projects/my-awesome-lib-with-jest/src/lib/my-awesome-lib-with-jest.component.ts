@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MyAwesomeLibWithJestService} from './my-awesome-lib-with-jest.service';
 
 @Component({
   selector: 'lib-my-awesome-lib-with-jest',
@@ -11,7 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyAwesomeLibWithJestComponent implements OnInit {
 
-  constructor() { }
+  public foo;
+
+  constructor(private service: MyAwesomeLibWithJestService) {
+    this.foo = service.bar;
+  }
 
   ngOnInit() {
   }
